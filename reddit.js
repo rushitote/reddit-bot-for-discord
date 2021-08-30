@@ -50,7 +50,7 @@ let getTopPost = async (subreddit) => {
       obj.video = post.url;
     }
 
-    obj.text = post.selftext;
+    obj.text = post.selftext + '\n' + post.url;
     obj.title = post.title;
     obj.sub = post.subreddit_name_prefixed;
     obj.link = "https://reddit.com" + post.permalink;
