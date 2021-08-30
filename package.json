@@ -1,0 +1,24 @@
+{
+  "name": "reddit-bot-for-discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rushitote/reddit-bot-for-discord.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rushitote/reddit-bot-for-discord/issues"
+  },
+  "homepage": "https://github.com/rushitote/reddit-bot-for-discord#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "snoowrap": "^1.23.0"
+  }
+}
