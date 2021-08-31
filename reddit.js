@@ -30,7 +30,7 @@ let getTopPost = async (subreddit) => {
       post.url.endsWith(".png") ||
       post.url.endsWith(".jpg") ||
       post.url.endsWith(".jpeg") || 
-      post.url.includes('imgur')
+      post.url.includes("imgur")
     ) {
       obj.image = post.url;
     }
