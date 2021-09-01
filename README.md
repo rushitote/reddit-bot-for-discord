@@ -31,3 +31,5 @@ Then run the `index.js`:
 ```bash
 node index.js
 ```
+
+**NOTE**: Since this uses discord.js v13 you will need Node v16.6+ to run this.
