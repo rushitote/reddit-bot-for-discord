@@ -12,7 +12,7 @@ const r = new snoowrap({
 });
 
 let getTopPost = async (subreddit) => {
-  let postsFunc = async (posts) => {
+  let postsFunc = (posts) => {
     let rndPost = Math.floor(Math.random() * posts.length);
     let post = posts[rndPost];
     let obj = {};
@@ -29,7 +29,7 @@ let getTopPost = async (subreddit) => {
     if (
       post.url.endsWith(".png") ||
       post.url.endsWith(".jpg") ||
-      post.url.endsWith(".jpeg") || 
+      post.url.endsWith(".jpeg") ||
       post.url.includes("imgur")
     ) {
       obj.image = post.url;
@@ -39,7 +39,7 @@ let getTopPost = async (subreddit) => {
       if (post.url.includes("v.redd.it")) {
         obj.video = post.media.reddit_video.fallback_url;
       }
-    } 
+    }
     // if post is video
     else if (
       post.url.endsWith(".mp4") ||
@@ -51,7 +51,7 @@ let getTopPost = async (subreddit) => {
       obj.video = post.url;
     }
 
-    obj.text = post.selftext + '\n' + post.url;
+    obj.text = post.selftext + "\n" + post.url;
     obj.title = post.title;
     obj.sub = post.subreddit_name_prefixed;
     obj.link = "https://reddit.com" + post.permalink;
@@ -60,7 +60,7 @@ let getTopPost = async (subreddit) => {
 
   try {
     let x = await r.getTop(subreddit, { limit: 50, time: "week" });
-    let obj = await postsFunc(x);
+    let obj = postsFunc(x);
     log(obj);
     return obj;
   } catch {
