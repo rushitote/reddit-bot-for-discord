@@ -37,7 +37,10 @@ let getTopPost = async (subreddit) => {
     // if post is reddit video
     else if (post.is_video) {
       if (post.url.includes("v.redd.it")) {
-        obj.video = post.media.reddit_video.fallback_url;
+        obj.redditVideo =
+          "https://reddit.com" +
+          post.permalink +
+          "?utm_source=share&utm_medium=web2x&context=3";
       }
     }
     // if post is video

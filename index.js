@@ -27,7 +27,7 @@ let postReply = async (msg, subreddit) => {
   embed.setFooter(embedObject.sub);
   embed.setURL(embedObject.link);
   embed.setTimestamp();
-  embed.setColor('#ff4500')
+  embed.setColor("#ff4500");
 
   if (
     embedObject.thumbnail != "self" &&
@@ -50,6 +50,11 @@ let postReply = async (msg, subreddit) => {
     embed.setImage(embedObject.image);
   }
 
+  if (embedObject.redditVideo) {
+    msg.reply(embedObject.redditVideo);
+    return;
+  }
+
   msg.reply({ embeds: [embed] });
   if (embedObject.video) {
     msg.reply(embedObject.video);
@@ -65,7 +70,7 @@ client.on("messageCreate", (msg) => {
       try {
         await postReply(msg, subreddit);
       } catch {
-        msg.reply("Sorry, something went wrong.")
+        msg.reply("Sorry, something went wrong.");
       }
     })();
   }
